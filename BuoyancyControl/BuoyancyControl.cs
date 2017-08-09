@@ -26,13 +26,19 @@ namespace BuoyancyControl
 {
     public class BuoyancyControl : PartModule
     {
-        [KSPField(isPersistant = true, advancedTweakable = true, guiName = "Buoyancy", guiActive = true, guiActiveEditor = true)]
+        [KSPField(isPersistant = true, advancedTweakable = true, guiName = "Buoyancy", guiActive = false, guiActiveEditor = true)]
         [UI_FloatRange(scene = UI_Scene.Editor, affectSymCounterparts = UI_Scene.All, minValue = 0.0f, maxValue = 2.0f, stepIncrement = 0.05f, controlEnabled = false)]
         public float Buoyancy = -1f;
 
+        [KSPField(isPersistant = true, advancedTweakable =true, guiName = "Buoyancy Editable", guiActive = false, guiActiveEditor = false)]
+        public bool enabled;
+
         public override void OnStart(StartState state)
         {
-            base.OnStart(state);
+            base.OnStart(state);  
+             
+            Fields["Buoyancy"].guiActiveEditor = enabled; 
+            Fields["enabled"].guiActiveEditor = !enabled;
 
             if (state == StartState.Editor 
                 && Buoyancy == -1f)
