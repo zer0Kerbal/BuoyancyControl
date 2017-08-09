@@ -28,13 +28,14 @@ namespace BuoyancyControl
     {
         [KSPField(isPersistant = true, advancedTweakable = true, guiName = "Buoyancy", guiActive = true, guiActiveEditor = true)]
         [UI_FloatRange(scene = UI_Scene.Editor, affectSymCounterparts = UI_Scene.All, minValue = 0.0f, maxValue = 2.0f, stepIncrement = 0.05f, controlEnabled = false)]
-        public float Buoyancy;
+        public float Buoyancy = -1f;
 
         public override void OnStart(StartState state)
         {
             base.OnStart(state);
 
-            if (state == StartState.Editor)
+            if (state == StartState.Editor 
+                && Buoyancy == -1f)
             {
                 Fields["Buoyancy"].SetValue(part.buoyancy, this);
                 return;
