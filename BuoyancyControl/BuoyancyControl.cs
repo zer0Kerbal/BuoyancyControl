@@ -30,17 +30,17 @@ namespace BuoyancyControl
         [UI_FloatRange(scene = UI_Scene.Editor, affectSymCounterparts = UI_Scene.All, minValue = 0.0f, maxValue = 2.0f, stepIncrement = 0.05f, controlEnabled = false)]
         public float Buoyancy = -1f;
 
-        [KSPField(isPersistant = true, advancedTweakable =true, guiName = "Buoyancy Editable", guiActive = false, guiActiveEditor = false)]
+        [KSPField(isPersistant = true, advancedTweakable = true, guiName = "Buoyancy Editable", guiActive = false, guiActiveEditor = false)]
         public bool enabled;
 
         public override void OnStart(StartState state)
         {
-            base.OnStart(state);  
-             
-            Fields["Buoyancy"].guiActiveEditor = enabled; 
+            base.OnStart(state);
+
+            Fields["Buoyancy"].guiActiveEditor = enabled;
             Fields["enabled"].guiActiveEditor = !enabled;
 
-            if (state == StartState.Editor 
+            if (state == StartState.Editor
                 && Buoyancy == -1f)
             {
                 Fields["Buoyancy"].SetValue(part.buoyancy, this);
