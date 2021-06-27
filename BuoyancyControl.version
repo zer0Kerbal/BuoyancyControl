@@ -1,0 +1,37 @@
+{
+    "NAME": "BuoyancyControl (FLOAT)",
+    "URL": "https://raw.githubusercontent.com/zer0Kerbal/BuoyancyControl/master/BuoyancyControl.version",
+    "DOWNLOAD": "https://github.com/zer0Kerbal/BuoyancyControl/releases/latest",
+    "CHANGE_LOG_URL": "https://raw.githubusercontent.com/zer0Kerbal/BuoyancyControl/master/Changelog.cfg",
+    "GITHUB": {
+        "USERNAME": "zer0Kerbal",
+        "REPOSITORY": "BuoyancyControl",
+        "ALLOW_PRE_RELEASE": false
+    },
+    "VERSION" :
+    {
+        "MAJOR" : 1,
+        "MINOR" : 0,
+        "PATCH" : 3,
+        "BUILD" : 0
+    },
+    "KSP_VERSION": {
+        "MAJOR": 1,
+        "MINOR": 8,
+        "PATCH": 1
+    },
+    "KSP_VERSION_MIN": {
+        "MAJOR": 1,
+        "MINOR": 8,
+        "PATCH": 1
+    },
+    "KSP_VERSION_MAX": {
+        "MAJOR": 1,
+        "MINOR": 8,
+        "PATCH": 9999
+    },
+    "INSTALL_LOC": {
+        "NAME": "BuoyancyControl",
+        "DIRECTORY": "BuoyancyControl"
+    }
+}
