@@ -1,0 +1,8 @@
+{
+ "schemaVersion": 1,
+ "label": "Code",
+ "labelColor": "darkblue",
+ "message": "<.net 4.8> <Unity 2017> <C#, Module Manager>",
+ "color": "66ccff",
+ "style": "plastic"
+}
