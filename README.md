@@ -1,11 +1,18 @@
 # Buoyancy Control
-*(KSP_BuoyancyControl)*
+*(KSP_BuoyancyControl by Xyphos)*
 
 > Kerbal Space Program addon to adjust the buoyancy on parts.
 >
 > ***
 >
-> 
+> To use, simply enable "Advanced Tweakables" in the main menu settings then you'll be able to see the Buoyancy slider on the context menu for every part. Then you can adjust the part's buoyancy to your liking.
+>
+> - 0.0 will cause the part to sink.
+> - 0.5 is likely to sink it partially. (not always guaranteed)
+> - 1.0 will make it float.
+> - 2.0 will make it almost unsinkable.
+>
+> NOTE: Some parts in Stock KSP will have their default buoyancy above 1.0
 
 ![GitHub Sponsors](https://img.shields.io/github/sponsors/zer0Kerbal?color=purple&label=Github%20Sponsors&style=social)
 ![Buoyancy Control](https://img.shields.io/github/v/release/zer0Kerbal/BuoyancyControl?include_prereleases?style=plastic)
