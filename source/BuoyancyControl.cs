@@ -21,55 +21,73 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+
+// 
+// Author: 
+//
+
+using System;
+using UnityEngine;
+using KSP.UI.Screens;
+using System.Numerics;
+
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using KSP.UI.Screens.Flight;
+using KSP.Localization;
+
+
+
 namespace BuoyancyControl
 {
-  public class BuoyancyControl : PartModule
-  {
-    [KSPField(
-        isPersistant      = true,
-        advancedTweakable = true,
-        guiName           = "Buoyancy",
-        guiActive         = false,
-        guiActiveEditor   = true
-      )]
-    [UI_FloatRange(
-        scene                 = UI_Scene.Editor,
-        affectSymCounterparts = UI_Scene.All,
-        minValue              = 0.0f,
-        maxValue              = 2.0f,
-        stepIncrement         = 0.05f,
-        controlEnabled        = false
-      )]
-    public float Buoyancy = -1f;
+	public class BuoyancyControl : PartModule
+	{
+		[KSPField(
+			isPersistant = true,
+			advancedTweakable = true,
+			guiName = "Buoyancy",
+			guiActive = false,
+			guiActiveEditor = true
+		  )]
+		[UI_FloatRange(
+			scene = UI_Scene.Editor,
+			affectSymCounterparts = UI_Scene.All,
+			minValue = 0.0f,
+			maxValue = 2.0f,
+			stepIncrement = 0.05f,
+			controlEnabled = false
+		  )]
+		public float Buoyancy = -1f;
 
-    [KSPField(
-        isPersistant      = true,
-        advancedTweakable = true,
-        guiName           = "Buoyancy Editable",
-        guiActive         = false,
-        guiActiveEditor   = false
-      )]
-    public bool enabled;
+		[KSPField(
+			isPersistant = true,
+			advancedTweakable = true,
+			guiName = "Buoyancy Editable",
+			guiActive = false,
+			guiActiveEditor = false
+		  )]
+		public bool enabled;
 
-    public override void OnStart(StartState state)
-    {
-      base.OnStart(state: state);
+		public override void OnStart(StartState state)
+		{
+			base.OnStart(state: state);
 
-      Fields[fieldName: "Buoyancy"].guiActiveEditor = enabled;
-      Fields[fieldName: "enabled"].guiActiveEditor  = !enabled;
+			Fields[fieldName: "Buoyancy"].guiActiveEditor = enabled;
+			Fields[fieldName: "enabled"].guiActiveEditor = !enabled;
 
-      if (state    == StartState.Editor
-       && Buoyancy == -1f)
-      {
-        Fields[fieldName: "Buoyancy"]
-       .SetValue(
-            newValue: part.buoyancy,
-            host: this
-          );
-        return;
-      }
+			if (state == StartState.Editor
+			 && Buoyancy == -1f)
+			{
+				Fields[fieldName: "Buoyancy"]
+			   .SetValue(
+					newValue: part.buoyancy,
+					host: this
+				  );
+				return;
+			}
 
-      part.buoyancy = Buoyancy;
-    }
-  }
+			part.buoyancy = Buoyancy;
+		}
+	}
 }
